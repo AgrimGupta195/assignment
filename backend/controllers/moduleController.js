@@ -1,4 +1,6 @@
-import Order from "../models/orderModel.js";
+import Order from "../models/orderModel.js";// import Product model so mongoose registers the schema before populate runs
+import Product from"../models/productModel.js";
+import { module1Response, module3Response } from "../services/aiService.js";
 export const module1 = async(req,res)=>{
     try {
         const{productName,description,material} = req.body;
@@ -30,12 +32,7 @@ export const module3 = async (req, res) => {
       carbonAvoided,
       localSourcing
     );
-    res.status(200).json({
-      orderId,
-      plasticSaved,
-      carbonAvoided,
-      aiReport: response
-    });
+    res.status(200).json(response);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: "Something went wrong" });

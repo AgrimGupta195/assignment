@@ -61,6 +61,7 @@ Guidelines:
 - Write a short explanation of the environmental impact in clear, natural language.
 - If local sourcing is true, explain that the products were sourced locally, which reduces transportation emissions and supports local producers.
 - Keep the message concise and positive.
+-Ensure output is clean and production-ready and not empty.
 Return ONLY valid JSON in the following format:
 {
   "plastic_saved": "",

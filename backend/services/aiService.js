@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export const module1Response = async (productName, description, material) => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite-preview" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
     const prompt = module1Prompt(productName, description, material);
     const result = await model.generateContent(prompt);
     const response = result.response.text();
@@ -27,9 +27,9 @@ export const module1Response = async (productName, description, material) => {
 //   "Bamboo"
 // );
 
-export const module2Response = async (plasticSaved, carbonAvoided, localSourcing) => {
+export const module3Response = async (plasticSaved, carbonAvoided, localSourcing) => {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-3.1-flash-lite-preview" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
     const prompt = module2Prompt(plasticSaved, carbonAvoided, localSourcing);
     const result = await model.generateContent(prompt);
     const response = result.response.text();
@@ -40,4 +40,4 @@ export const module2Response = async (plasticSaved, carbonAvoided, localSourcing
   }
 };
 
-// module2Response(190,1140,true);
+// module3Response(190,1140,true);
